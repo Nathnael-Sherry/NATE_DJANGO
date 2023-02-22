@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Members form</title>
+</head>
+<body>
+<h1>members page</h1>
+<form action="" method="POST">
+
+    {% csrf_token %}
+    {{ reg_members_form.as_p }}
+    <input type="submit" name="members" value="registermember">
+</form>
+
+{% if submit_members == "registermember" %}
+    {{ Name }}
+    {{ Age }}
+    {{ Phone }}
+    {{ City }}
+    {{ Country }}
+
+{% endif %}
+</body>
+</html>
