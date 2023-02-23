@@ -53,13 +53,14 @@ def reg(request):
     context = {'reg_form': reg_form, 'name': name, 'email': email, 'password': password, 'submit_button': submit_button}
     return render(request, 'register.html', context)
 
+
 def members(request):
     submit_members = request.POST.get("members")
-    Name =''
-    Age =''
-    Phone =''
-    City =''
-    Country =''
+    Name = ''
+    Age = ''
+    Phone = ''
+    City = ''
+    Country = ''
 
     reg_members_form = members_reg(request.POST or None)
     if reg_members_form.is_valid():
@@ -69,11 +70,11 @@ def members(request):
         City = reg_members_form.cleaned_data.get("City")
         Country = reg_members_form.cleaned_data.get("Country")
     context = {'reg_members_form': reg_members_form,
-               'Name':Name,
-               'Age':Age,
-               'Phone':Phone,
-               'City':City,
-               'Country':Country,
-               'submit_members':submit_members
-    }
-    return render(request, 'members.html',context)
+               'Name': Name,
+               'Age': Age,
+               'Phone': Phone,
+               'City': City,
+               'Country': Country,
+               'submit_members': submit_members
+               }
+    return render(request, 'members.html', context)
